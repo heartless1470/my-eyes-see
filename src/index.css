@@ -249,12 +249,16 @@ main {
   display: grid;
   place-items: center;
   padding: 1rem;
+  overflow-y: auto;
   background: rgba(47, 37, 29, 0.38);
   z-index: 20;
 }
 
 .calendar-dialog {
   width: min(760px, 100%);
+  max-height: calc(100svh - 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: rgba(255, 250, 243, 0.98);
 }
 
@@ -498,6 +502,10 @@ a:hover {
 
   .calendar-header {
     flex-direction: column;
+  }
+
+  .calendar-overlay {
+    place-items: start center;
   }
 
   .calendar-close {
