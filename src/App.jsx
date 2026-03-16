@@ -403,7 +403,14 @@ function ContactFooter() {
       <div className="contact-block">
         <h2>Socials</h2>
         <p>
-          Facebook: <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Wild Flour</a>
+          Facebook:{' '}
+          <a
+            href="https://www.facebook.com/profile.php?id=61587822423574&rdid=rAJUXzOGjOMl06I9&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CHHWDD3Tj%2F#"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Wild Flour
+          </a>
         </p>
         <p>
           Instagram:{' '}
