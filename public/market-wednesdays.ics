@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wild Flour Bakery//Market Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wildflour-market-wednesdays@wildflourlocalbakery.com
+DTSTAMP:20260316T120000Z
+DTSTART:20260513T130000Z
+DTEND:20260513T170000Z
+RRULE:FREQ=WEEKLY;BYDAY=WE;UNTIL=20261021T170000Z
+SUMMARY:Wild Flour at Bowling Green Farmers Market
+LOCATION:Bowling Green Farmers Market, Bowling Green, OH
+DESCRIPTION:Find Wild Flour every Wednesday from May 13 through October 21.
+END:VEVENT
+END:VCALENDAR
