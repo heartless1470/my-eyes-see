@@ -333,6 +333,80 @@ main {
   animation-delay: var(--delay);
 }
 
+.menu-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-hero::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 226, 198, 0.7), rgba(244, 226, 198, 0));
+  pointer-events: none;
+}
+
+.menu-featured-row {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.menu-featured-pill {
+  border: 1px solid rgba(93, 69, 51, 0.26);
+  background: linear-gradient(140deg, #faefde, #f5e7d0);
+  color: #5d4533;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: rise 500ms ease both;
+  animation-delay: var(--delay);
+}
+
+.menu-section-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.menu-section-card {
+  border: 1px solid rgba(93, 69, 51, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 252, 247, 0.96);
+  padding: 1rem;
+  box-shadow: 0 12px 26px rgba(78, 56, 39, 0.1);
+  animation: rise 580ms ease both;
+  animation-delay: var(--delay);
+}
+
+.menu-section-list {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.menu-section-item {
+  border: 1px solid rgba(93, 69, 51, 0.16);
+  background: #fffdf8;
+  border-radius: 10px;
+  padding: 0.58rem 0.7rem;
+  animation: rise 520ms ease both;
+  animation-delay: var(--delay);
+}
+
+.menu-section-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(93, 69, 51, 0.32);
+}
+
 .order-form p {
   margin-top: 0.55rem;
   color: var(--muted);
@@ -517,6 +591,10 @@ a:hover {
   }
 
   .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-section-grid {
     grid-template-columns: 1fr;
   }
 

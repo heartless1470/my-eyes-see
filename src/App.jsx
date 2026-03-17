@@ -28,24 +28,34 @@ const marketDates = [
   'October 21',
 ]
 
-const menuItems = [
-  'Sandwich bread loaf',
-  'Cinnamon swirl loaf',
-  'Assorted breads',
-  'Savory focaccia',
-  'Sweet focaccia',
-  'English muffins',
-  'Bagels',
-  'Muffins',
-  'Mini muffins',
-  'Gluten free brownies',
-  'Gluten free brownie bites',
-  'Chocolate chip cookies',
-  'Cinnamon swirl cookies',
-  'Pizza crusts',
-  'Hand pies (cherry and apple)',
-  'Scones',
-  'Dinner rolls',
+const menuSections = [
+  {
+    title: 'Breads + Everyday Staples',
+    items: [
+      'Sandwich bread loaf',
+      'Cinnamon swirl loaf',
+      'Assorted breads',
+      'English muffins',
+      'Bagels',
+      'Dinner rolls',
+      'Pizza crusts',
+    ],
+  },
+  {
+    title: 'Sweet Bakes + Treats',
+    items: [
+      'Muffins',
+      'Mini muffins',
+      'Chocolate chip cookies',
+      'Cinnamon swirl cookies',
+      'Scones',
+      'Hand pies (cherry and apple)',
+    ],
+  },
+  {
+    title: 'Specialty + Gluten Free',
+    items: ['Gluten free brownies', 'Gluten free brownie bites', 'Savory focaccia', 'Sweet focaccia'],
+  },
 ]
 
 function MarketCalendarDialog({ isOpen, onClose }) {
@@ -155,6 +165,9 @@ function SiteHeader() {
         <NavLink to="/" end>
           Markets
         </NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/menu">Menu</NavLink>
+        <NavLink to="/limited-orders">Limited Orders</NavLink>
       </nav>
     </header>
   )
@@ -238,18 +251,25 @@ function AboutPage() {
 function MenuPage() {
   return (
     <section className="page fade-in">
-      <div className="card text-card">
+      <div className="card text-card menu-hero">
         <h2>Seasonal Menu</h2>
         <p>Menu is subject to change seasonally. Flavors of regular products may change biweekly.</p>
       </div>
 
-      <ul className="menu-grid">
-        {menuItems.map((item, index) => (
-          <li key={item} className="menu-item" style={{ '--delay': `${index * 45}ms` }}>
-            {item}
-          </li>
+      <div className="menu-section-grid">
+        {menuSections.map((section, index) => (
+          <article className="menu-section-card" style={{ '--delay': `${index * 90}ms` }} key={section.title}>
+            <h3>{section.title}</h3>
+            <ul className="menu-section-list">
+              {section.items.map((item, itemIndex) => (
+                <li className="menu-section-item" style={{ '--delay': `${itemIndex * 45}ms` }} key={item}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
   )
 }
@@ -430,6 +450,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/limited-orders" element={<OrdersPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
